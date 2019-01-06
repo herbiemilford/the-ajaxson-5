@@ -1,5 +1,5 @@
 
-
+//api-key: gAMelB1fMdBia6YuaKtP0PttNE8povQQ
 $(document).ready(function() {
     // register our function as the "callback" to be triggered by the form's submission event
     $("#form-gif-request").submit(fetchAndDisplayGif); // in other words, when the form is submitted, fetchAndDisplayGif() will be executed
@@ -19,17 +19,17 @@ function fetchAndDisplayGif(event) {
     event.preventDefault();
     
     // get the user's input text from the DOM
-    var searchQuery = ""; // TODO should be e.g. "dance"
+    var searchQuery = $("#tag").val(); // TODO should be e.g. "dance"
 
     // configure a few parameters to attach to our request
     var params = { 
         api_key: "dc6zaTOxFJmzC", 
-        tag : "" // TODO should be e.g. "jackson 5 dance"
+        tag : "Jackson 5 " + searchQuery // TODO should be e.g. "jackson 5 dance"
     };
     
     // make an ajax request for a random GIF
     $.ajax({
-        url: "", // TODO where should this request be sent?
+        url: "https://api.giphy.com/v1/gifs/random", // TODO where should this request be sent?
         data: params, // attach those extra parameters onto the request
         success: function(response) {
             // if the response comes back successfully, the code in here will execute.
@@ -40,7 +40,11 @@ function fetchAndDisplayGif(event) {
             
             // TODO
             // 1. set the source attribute of our image to the image_url of the GIF
+            var imgSrc = response.data.image_url;
+            $("#gif").attr("src", imgSrc)
             // 2. hide the feedback message and display the image
+            $("#gif").show(); //shows image
+
         },
         error: function() {
             // if something went wrong, the code in here will execute instead of the success function
