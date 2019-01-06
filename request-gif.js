@@ -41,9 +41,10 @@ function fetchAndDisplayGif(event) {
             // TODO
             // 1. set the source attribute of our image to the image_url of the GIF
             var imgSrc = response.data.image_url;
-            $("#gif").attr("src", imgSrc)
+            $("#gif").attr("src", imgSrc).show();
             // 2. hide the feedback message and display the image
             $("#gif").show(); //shows image
+            $("#feedback").hide();//hides error message
 
         },
         error: function() {
@@ -57,6 +58,15 @@ function fetchAndDisplayGif(event) {
     
     // TODO
     // give the user a "Loading..." message while they wait
+    $("#submit").click(function(){
+        $(".loading").text("Just a sec...");
+        $("#gif").load(function(){
+            $(".loading").hide();
+            $("#loading:reset");
+            
+        });
+    });
+    
     
 }
 
