@@ -61,8 +61,8 @@ function fetchAndDisplayGif(event) {
     $("#submit").click(function(){
         $(".loading").text("Just a sec...");
         $("#gif").load(function(){
-            $(".loading").hide();
-            $("#loading:reset");
+            $(".loading").empty();
+           
             
         });
     });
