@@ -20,7 +20,13 @@ function fetchAndDisplayGif(event) {
     
     // get the user's input text from the DOM
     var searchQuery = $("#tag").val(); // TODO should be e.g. "dance"
+    var captcha = $("#captcha").val();
 
+
+if (captcha != 5) {
+    $("#has-feedback").text("No gifs for you.");
+    $("captcha-input").addClass("form-group has-error has-feedback")
+}
     // configure a few parameters to attach to our request
     var params = { 
         api_key: "dc6zaTOxFJmzC", 
