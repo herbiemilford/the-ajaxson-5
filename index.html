@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>AJAXson 5</title>
+    <title>The AJAXson 5</title>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript" src="request-gif.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
 </head>
 <body>
     <h1>AJAXson 5</h1>
-
-
+<section>
+<form>
+     <button id="reset"value="reset">Try Again!</button>
+</form>
 
     <form id="form-gif-request">
         <label>What kind of Jackson 5 related gif do you want?</label>
         <input id="tag" name="tag" type="text"/>
-        <label id="captcha">Prove you are not a robot by answering this riddle:</label>
+
+        <label id="robot">Prove you are not a robot by answering this riddle:</label>
         <div id="captcha-input">
             <input type="number" id="captcha"><span>Jacksons are better than 1.</span>
         </div>
-        <input id="submit" type="submit" value="Get my Gif!" />
-        <button value="reset">Try Again!</button>
+        <input class="btn btn-primary"id="submit" type="submit" value="Get my Gif!" />
+       
 
     </form>
+    </section>
 <div class="loading">
     
 </div>
-    <img id="gif" src="" hidden="true"/>
-    <p id="has-feedback" hidden="true"></p>
+    <img id="gif" hidden="true"/>
+    <p id="feedback" hidden="true"></p>
 
 </body>
 </html>

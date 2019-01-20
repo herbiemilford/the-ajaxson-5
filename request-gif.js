@@ -1,3 +1,9 @@
+$("#reset").click(function(){
+   window.location.reload(true);
+   console.log("reset") 
+})
+
+
 
 //api-key: gAMelB1fMdBia6YuaKtP0PttNE8povQQ
 $(document).ready(function() {
@@ -24,8 +30,14 @@ function fetchAndDisplayGif(event) {
 
 
 if (captcha != 5) {
-    $("#has-feedback").text("No gifs for you.");
-    $("captcha-input").addClass("form-group has-error has-feedback")
+    $("#feedback").text("No gifs for you.");
+    $("#captcha-input").addClass("form-group has-error has-feedback");
+    setGifLoadedStatus(false);
+    return;
+}
+else {
+    console.log(captcha);
+    console.log(searchQuery);
 }
     // configure a few parameters to attach to our request
     var params = { 
@@ -47,10 +59,11 @@ if (captcha != 5) {
             // TODO
             // 1. set the source attribute of our image to the image_url of the GIF
             var imgSrc = response.data.image_url;
-            $("#gif").attr("src", imgSrc).show();
+            $("#gif").attr("src", imgSrc)
             // 2. hide the feedback message and display the image
             $("#gif").show(); //shows image
             $("#feedback").hide();//hides error message
+            $("#gif").attr("hidden", false);
 
         },
         error: function() {
@@ -66,14 +79,13 @@ if (captcha != 5) {
     // give the user a "Loading..." message while they wait
     $("#submit").click(function(){
         $(".loading").text("Just a sec...");
-        $("#gif").load(function(){
-            $(".loading").empty();
-           
-            
-        });
+
     });
-    
-    
+
+    $("#gif").load(function(){
+    $(".loading").empty();
+           
+    })
 }
 
 
