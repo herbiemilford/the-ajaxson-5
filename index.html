@@ -5,32 +5,55 @@
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript" src="request-gif.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, intial-scale=1">
+
 </head>
 <body>
-    <h1>AJAXson 5</h1>
-<section>
-<form>
+
+    <div class="container-fluid text-center">
+   
+  <header >
+    <h1 class="jumbotron">AJAXson 5</h1>
+    </header>
+    <br/>
+<section class="w-50 p-3 mx-auto">
+<!-- <form>
      <button id="reset"value="reset">Try Again!</button>
-</form>
+</form> -->
 
     <form id="form-gif-request">
-        <label>What kind of Jackson 5 related gif do you want?</label>
-        <input id="tag" name="tag" type="text"/>
+       <div class="card card-columns card-body bg-light" style="">
 
+        <div class="row">
+        <div class="col-md-12" id="question-label"><label>What kind of Jackson 5 related gif do you want?</label></div>
+        </div>
+        
+        <div class="row">
+        <div class="col-md-12" id="question-input"><input id="tag" name="tag" type="text"/></div>
+    
+        </div>
+    </div>
+<br />
+
+<div class="card card-body bg-light" >
         <label id="robot">Prove you are not a robot by answering this riddle:</label>
         <div id="captcha-input">
-            <input type="number" id="captcha"><span>Jacksons are better than 1.</span>
+            <input type="number" class="text-right" id="captcha"><span>  Jacksons are better than 1.</span>
         </div>
+    </div>
+<br />
         <input class="btn btn-primary"id="submit" type="submit" value="Get my Gif!" />
        
-
+  <br />  
     </form>
     </section>
 <div class="loading">
-    
+<br/>    
 </div>
+<br>
     <img id="gif" hidden="true"/>
-    <p id="feedback" hidden="true"></p>
-
+    <p class="alert alert-danger" id="feedback" hidden="true"></p>
+</div>
 </body>
 </html>

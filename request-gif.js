@@ -1,7 +1,7 @@
-$("#reset").click(function(){
-   window.location.reload(true);
-   console.log("reset") 
-})
+// $("#reset").click(function(){
+//    window.location.reload(true);
+//    console.log("reset") 
+// })
 
 
 
@@ -64,6 +64,7 @@ else {
             $("#gif").show(); //shows image
             $("#feedback").hide();//hides error message
             $("#gif").attr("hidden", false);
+            $("#form-gif-request input").prop("readonly", "readonly")
 
         },
         error: function() {
