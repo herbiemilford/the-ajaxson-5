@@ -24,7 +24,7 @@ function fetchAndDisplayGif(event) {
 
 if (captcha != 5) {
     $("#feedback").text("No gifs for you.");
-    $("#captcha-input").addClass("form-group has-error has-feedback");
+
     setGifLoadedStatus(false);
     return;
 }
