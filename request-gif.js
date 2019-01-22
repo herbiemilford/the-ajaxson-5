@@ -1,11 +1,4 @@
-// $("#reset").click(function(){
-//    window.location.reload(true);
-//    console.log("reset") 
-// })
 
-
-
-//api-key: gAMelB1fMdBia6YuaKtP0PttNE8povQQ
 $(document).ready(function() {
     // register our function as the "callback" to be triggered by the form's submission event
     $("#form-gif-request").submit(fetchAndDisplayGif); // in other words, when the form is submitted, fetchAndDisplayGif() will be executed
